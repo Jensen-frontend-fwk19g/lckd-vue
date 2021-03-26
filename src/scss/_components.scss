@@ -1,0 +1,48 @@
+@import './variables';
+
+label {
+    display: inline-flex;
+    font-size: .7rem;
+    padding: .125rem .5rem;
+    background: $yellow;
+    color: $purple;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    border-top-left-radius: $radius * 2;
+    border-top-right-radius: $radius * 2;
+}
+
+
+.btn {
+    display: inline-flex;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $purple;
+    background: white;
+    border-radius: $radius * 2;
+    width: 100%;
+}
+
+
+input[type='text']:focus, input[type='password']:focus {
+    outline: none;
+}
+
+input[type='text'], input[type='password'] {
+    border: 1px solid $yellow;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: $yellow;
+    background: none;
+    margin-bottom: 1.5rem;
+    border-radius: $radius;
+    border-top-left-radius: 0px;
+}
