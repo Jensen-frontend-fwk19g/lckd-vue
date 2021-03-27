@@ -27,17 +27,18 @@ export default {
     },
     watch: {
         password(oldPW, newPW) {
-            
-            for(let i = 0; i < newPW.length; i++ ) {
-
-                if(newPW[i].match(/^[A-Z]/)) {
-                    this.validator.mixed = true;
-                } else {
-                    this.validator.mixed = false;
-                }
-
+            console.log(newPw)
+            if(newPW.length > 10){
+                this.validator.length = true;
             }
 
+            if(newPW.match(/^[A-Z]/) && newPW.match(/^[a-z]/)) {
+                this.validator.mixed = true;
+            }
+
+            if(newPW.match(/^[0-9]$/)){
+                this.validator.numbers = true;
+            }
         }
     }
 }

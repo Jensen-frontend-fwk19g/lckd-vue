@@ -8,10 +8,10 @@
       <section class="plain-view">
         <label for="#">plain view</label>
         <div class="plain-pw">
-          <aside class="pw mono">
+          <aside class="pw mono" ref="pw">
             {{ plainPassword.password }}
           </aside>
-          <aside class="copy">
+          <aside class="copy" @click="copyPassword">
             <img src="@/assets/copy.svg" alt="copy">
           </aside>
         </div>
@@ -44,6 +44,14 @@ export default {
   },
   beforeMount(){
     this.$store.dispatch('getLckd')
+  },
+  methods: {
+    copyPassword(){
+
+      this.$refs.pw.select();
+      this.$refs.pw.setSelectionRange(0, 99999); /* For mobile devices */
+      document.execCommand("copy");
+    }
   }
 }
 </script>
