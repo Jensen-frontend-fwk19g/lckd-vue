@@ -27,18 +27,11 @@ export default {
     },
     watch: {
         password(oldPW, newPW) {
-            console.log(newPw)
-            if(newPW.length > 10){
-                this.validator.length = true;
-            }
 
-            if(newPW.match(/^[A-Z]/) && newPW.match(/^[a-z]/)) {
-                this.validator.mixed = true;
-            }
-
-            if(newPW.match(/^[0-9]$/)){
-                this.validator.numbers = true;
-            }
+            this.validator.length =  (newPW.length > 9) ? true : false;
+            this.validator.mixed =   (newPW.match(/^[A-Z]/)) ? true : false;
+            this.validator.numbers = (newPW.match(/^[0-9]$/)) ? true : false;
+        
         }
     }
 }

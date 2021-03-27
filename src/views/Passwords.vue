@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     copyPassword(){
-
       this.$refs.pw.select();
       this.$refs.pw.setSelectionRange(0, 99999); /* For mobile devices */
       document.execCommand("copy");
@@ -65,6 +64,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  height: auto;
 
   .list {
     width: 100%;
@@ -90,6 +90,7 @@ export default {
       height: 3rem;
       display: flex;
       align-items: center;
+      margin-bottom: 2rem;
 
 
       .pw {
